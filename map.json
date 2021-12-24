@@ -1270,6 +1270,11 @@
                  "name":"jitsiTrigger",
                  "type":"string",
                  "value":"onaction"
+                }, 
+                {
+                 "name":"jitsiTriggerMessage",
+                 "type":"string",
+                 "value":"Welcome ! Lets check on you before enterring the meeting, press SPACE to enter meeting and check-in."
                 }],
          "type":"tilelayer",
          "visible":true,
@@ -1298,6 +1303,11 @@
                  "name":"jitsiTrigger",
                  "type":"string",
                  "value":"onaction"
+                }, 
+                {
+                 "name":"jitsiTriggerMessage",
+                 "type":"string",
+                 "value":"Welcome ! Lets check on you before enterring the meeting, press SPACE to enter meeting and check-in."
                 }],
          "type":"tilelayer",
          "visible":true,
