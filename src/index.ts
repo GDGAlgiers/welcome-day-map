@@ -1,250 +1,194 @@
 /// <reference path="../node_modules/@workadventure/iframe-api-typings/iframe_api.d.ts" />
-import {bootstrapExtra} from '@workadventure/scripting-api-extra'
+import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
-console.log('Script started successfully');
+console.log("Script started successfully");
 
 async function extendedFeatures() {
-    try {
-        await bootstrapExtra()
-        console.log('Scripting API Extra loaded successfully');
+  try {
+    await bootstrapExtra();
+    console.log("Scripting API Extra loaded successfully");
 
-        // Place the countdown GIF inside of the cinema screen
-        const countdown = await WA.room.website.get('cinemaScreen');
-        countdown.x = 1670;
-        countdown.y = 802;
-        countdown.width = 320;
-        countdown.height = 240;
+    // Place the countdown GIF inside of the cinema screen
+    const countdown = await WA.room.website.get("cinemaScreen");
+    countdown.x = 1670;
+    countdown.y = 802;
+    countdown.width = 320;
+    countdown.height = 240;
 
-        // Place the github repository card
-        const githubRepository = await WA.room.website.get('githubRepository');
-        githubRepository.x = 3272;
-        githubRepository.y = 1088;
-        githubRepository.width = 400;
-        githubRepository.height = 300;
-    } catch (error) {
-        console.error('Scripting API Extra ERROR',error);
-    }
+    // Place the github repository card
+    const githubRepository = await WA.room.website.get("githubRepository");
+    githubRepository.x = 3272;
+    githubRepository.y = 1088;
+    githubRepository.width = 400;
+    githubRepository.height = 300;
+  } catch (error) {
+    console.error("Scripting API Extra ERROR", error);
+  }
 }
 extendedFeatures();
-
-// Manage the scrolling effect on the public monitor in the office
-WA.room.onEnterZone('scrollMonitor', () => WA.room.hideLayer('inactiveMonitor'));
-WA.room.onLeaveZone('scrollMonitor', () => WA.room.showLayer('inactiveMonitor'));
-
-// Manage the animated CTAs
-WA.room.onEnterZone('toRoom3', () => WA.room.hideLayer('doorTipSwitch'));
-WA.room.onLeaveZone('toRoom3', () => WA.room.showLayer('doorTipSwitch'));
-
-WA.room.onEnterZone('doorCode', () => WA.room.hideLayer('ctaDigitCodeSwitch'));
-WA.room.onLeaveZone('doorCode', () => WA.room.showLayer('ctaDigitCodeSwitch'));
 
 // Manage popups
 let currentZone: string;
 let currentPopup: any;
 
 const config = [
-    {
-        zone: 'needHelp',
-        message: 'Do you need some guidance? Meet us by going at the top left of the map!',
-        cta: []
-    },
-    {
-        zone: 'followUs1',
-        message: 'Hey! Have you already started following us?',
-        cta: [
-            {
-                label: 'LinkedIn',
-                className: 'primary',
-                callback: () => WA.nav.openTab('https://www.linkedin.com/company/workadventu-re'),
-            },
-            {
-                label: 'Twitter',
-                className: 'primary',
-                callback: () => WA.nav.openTab('https://twitter.com/workadventure_'),
-            }
-        ]
-    },
-    {
-        zone: 'followUs2',
-        message: 'Hey! Have you already started following us?',
-        cta: [
-            {
-                label: 'LinkedIn',
-                className: 'primary',
-                callback: () => WA.nav.openTab('https://www.linkedin.com/company/workadventu-re'),
-            },
-            {
-                label: 'Twitter',
-                className: 'primary',
-                callback: () => WA.nav.openTab('https://twitter.com/workadventure_'),
-            }
-        ]
-    },
-    {
-        zone: 'followUs3',
-        message: 'Hey! Have you already started following us?',
-        cta: [
-            {
-                label: 'LinkedIn',
-                className: 'primary',
-                callback: () => WA.nav.openTab('https://www.linkedin.com/company/workadventu-re'),
-            },
-            {
-                label: 'Twitter',
-                className: 'primary',
-                callback: () => WA.nav.openTab('https://twitter.com/workadventure_'),
-            }
-        ]
-    },
-    {
-        zone: 'doorCode',
-        message: 'Hello, I\'m Mr Robot. The code is 5300.',
-        cta: []
-    },
-    {
-        zone: 'toRoom3',
-        message: 'Want to access the gaming room? Mr Robot can help you!',
-        cta: []
-    },
-    {
-        zone: 'gatherDesk',
-        message: 'Learn more about WorkAdventure events and our ProductHunt launch!',
-        cta: [
-            {
-                label: 'Dismiss',
-                className: 'normal',
-                callback: () => WA.state.saveVariable('dontShowGatherPopup', true).then(() => closePopup()),
-            }
-        ]
-    },
-    {
-        zone: 'workDesk',
-        message: 'See how your virtual office could be. This is a small example of course ;)',
-        cta: [
-            {
-                label: 'Dismiss',
-                className: 'normal',
-                callback: () => WA.state.saveVariable('dontShowWorkPopup', true).then(() => closePopup()),
-            }
-        ]
-    },
-    {
-        zone: 'collaborateDesk',
-        message: 'Test and feel live integrations of collaborative software!',
-        cta: [
-            {
-                label: 'Dismiss',
-                className: 'normal',
-                callback: () => WA.state.saveVariable('dontShowCollaboratePopup', true).then(() => closePopup()),
-            }
-        ]
-    },
-    {
-        zone: 'playDesk',
-        message: 'Experience multi and solo games, directly embedded into WorkAdventure!',
-        cta: [
-            {
-                label: 'Dismiss',
-                className: 'normal',
-                callback: () => WA.state.saveVariable('dontShowPlayPopup', true).then(() => closePopup()),
-            }
-        ]
-    },
-    {
-        zone: 'createDesk',
-        message: 'Do you want to create your own map by yourself? See how here!',
-        cta: [
-            {
-                label: 'Dismiss',
-                className: 'normal',
-                callback: () => WA.state.saveVariable('dontShowCreatePopup', true).then(() => closePopup()),
-            }
-        ]
-    }
-]
+  {
+    zone: "start",
+    message: "Welcome aboard our GDG & WTM Algiers World",
+    cta: [
+      {
+        label: "Next",
+        className: "primary",
+        callback: () =>
+          WA.state.saveVariable("dontShowStartPopup", true).then(() => {
+            console.log(currentPopup);
+            closePopup();
+            openPopup("start2");
+          }),
+      },
+    ],
+  },
+  {
+    zone: "start2",
+    message:
+      "Enjoy exploring the space and don't forget to be present at 20:00 GMT+1 on the conference room :)",
+    cta: [
+      {
+        label: "Thank you ",
+        className: "primary",
+        callback: () => closePopup(),
+      },
+    ],
+  },
+  {
+    zone: "local",
+    message: "Explore our headquarter or as we call it `Local`",
+    cta: [
+      {
+        label: "Dismiss",
+        className: "normal",
+        callback: () => closePopup(),
+      },
+    ],
+  },
+  {
+    zone: "meetup",
+    message:
+      "The meetup space will be used to stream our welcome day live at 20:00 GMT+1",
+    cta: [
+      {
+        label: "Dismiss",
+        className: "normal",
+        callback: () => closePopup(),
+      },
+    ],
+  },
+  {
+    zone: "eventsprojects",
+    message:
+      "At GDG & WTM Algiers we provide high quality events and projects, explore them inside this room",
+    cta: [
+      {
+        label: "Dismiss",
+        className: "normal",
+        callback: () => closePopup(),
+      },
+    ],
+  },
+  {
+    zone: "departments",
+    message:
+      "Do you want to know what are the secret of our success ? check out presentations ofour departments in this room",
+    cta: [
+      {
+        label: "Dismiss",
+        className: "normal",
+        callback: () => closePopup(),
+      },
+    ],
+  },
+  {
+    zone: "discordspace",
+    message:
+      "GDG Algiers has a discord community space with +2k member, we do awesome things there check them out here",
+    cta: [
+      {
+        label: "Dismiss",
+        className: "normal",
+        callback: () => closePopup(),
+      },
+    ],
+  },
+  {
+    zone: "chill",
+    message:
+      "Tired of exploring the space ? you can sit in this room to have a rest and chill",
+    cta: [
+      {
+        label: "Dismiss",
+        className: "normal",
+        callback: () => closePopup(),
+      },
+    ],
+  },
+  {
+    zone: "games",
+    message:
+      "Wanna play some games with friends this is the perfect room for that, uno,skribble and gartic games are presents",
+    cta: [
+      {
+        label: "Dismiss",
+        className: "normal",
+        callback: () => closePopup(),
+      },
+    ],
+  },
+];
 
-// Need Help / Follow Us
-WA.room.onEnterZone('needHelp', () => openPopup('needHelp'));
-WA.room.onLeaveZone('needHelp', closePopup);
+WA.room.onEnterZone("local", () => openPopup("local"));
+WA.room.onLeaveZone("local", closePopup);
 
-WA.room.onEnterZone('followUs1', () => openPopup('followUs1'));
-WA.room.onLeaveZone('followUs1', closePopup);
+WA.room.onEnterZone("meetup", () => openPopup("meetup"));
+WA.room.onLeaveZone("meetup", closePopup);
 
-WA.room.onEnterZone('followUs2', () => openPopup('followUs2'));
-WA.room.onLeaveZone('followUs2', closePopup);
+WA.room.onEnterZone("eventsprojects", () => openPopup("eventsprojects"));
+WA.room.onLeaveZone("eventsprojects", closePopup);
 
-WA.room.onEnterZone('followUs3', () => openPopup('followUs3'));
-WA.room.onLeaveZone('followUs3', closePopup);
+WA.room.onEnterZone("departments", () => openPopup("departments"));
+WA.room.onLeaveZone("departments", closePopup);
 
-// Room desks
-WA.room.onEnterZone('gatherDesk', () => {
-    const dontShow = WA.state.loadVariable('dontShowGatherPopup')
-    if (dontShow) return;
+WA.room.onEnterZone("discordspace", () => openPopup("discordspace"));
+WA.room.onLeaveZone("discordspace", closePopup);
 
-    openPopup('gatherDesk')
+WA.room.onEnterZone("chill", () => openPopup("chill"));
+WA.room.onLeaveZone("chill", closePopup);
+
+WA.room.onEnterZone("games", () => openPopup("games"));
+WA.room.onLeaveZone("games", closePopup);
+
+WA.room.onEnterZone("start", () => {
+  const dontShow = WA.state.loadVariable("dontShowStartPopup");
+  if (dontShow) return;
+  openPopup("start");
 });
-WA.room.onLeaveZone('gatherDesk', closePopup);
-
-WA.room.onEnterZone('workDesk', () => {
-    const dontShow = WA.state.loadVariable('dontShowWorkPopup')
-    if (dontShow) return;
-
-    openPopup('workDesk')
-});
-WA.room.onLeaveZone('workDesk', closePopup);
-
-WA.room.onEnterZone('collaborateDesk', () => {
-    const dontShow = WA.state.loadVariable('dontShowCollaboratePopup')
-    if (dontShow) return;
-
-    openPopup('collaborateDesk')
-});
-WA.room.onLeaveZone('collaborateDesk', closePopup);
-
-WA.room.onEnterZone('playDesk', () => {
-    const dontShow = WA.state.loadVariable('dontShowPlayPopup')
-    if (dontShow) return;
-
-    openPopup('playDesk')
-});
-WA.room.onLeaveZone('playDesk', closePopup);
-
-WA.room.onEnterZone('createDesk', () => {
-    const dontShow = WA.state.loadVariable('dontShowCreatePopup')
-    if (dontShow) return;
-
-    openPopup('createDesk')
-});
-WA.room.onLeaveZone('createDesk', closePopup);
-
-// Manage the popups to open the Room3 door
-WA.room.onEnterZone('doorCode', () => openPopup('doorCode'));
-WA.room.onLeaveZone('doorCode', closePopup);
-
-WA.room.onEnterZone('toRoom3', () => {
-    const isDoorOpen = WA.state.loadVariable('room3Door')
-    if (isDoorOpen) return;
-
-    openPopup('toRoom3')
-});
-WA.room.onLeaveZone('toRoom3', closePopup);
+WA.room.onLeaveZone("start", closePopup);
 
 // Popup management functions
 function openPopup(zoneName: string) {
-    currentZone = zoneName
-    const popupName = zoneName + 'Popup'
-    const zone = config.find((item) => {
-        return item.zone == zoneName
-    });
+  currentZone = zoneName;
+  const popupName = zoneName + "Popup";
+  const zone = config.find((item) => {
+    return item.zone == zoneName;
+  });
 
-    if (typeof zone !== 'undefined') {
-        // @ts-ignore otherwise we can't use zone.cta object
-        currentPopup = WA.ui.openPopup(popupName, zone.message, zone.cta)
-    }
+  if (typeof zone !== "undefined") {
+    // @ts-ignore otherwise we can't use zone.cta object
+    currentPopup = WA.ui.openPopup(popupName, zone.message, zone.cta);
+  }
 }
-function closePopup(){
-    if (typeof currentPopup !== 'undefined') {
-        currentPopup.close();
-        currentPopup = undefined;
-    }
+function closePopup() {
+  if (typeof currentPopup !== "undefined") {
+    currentPopup.close();
+    currentPopup = undefined;
+  }
 }
