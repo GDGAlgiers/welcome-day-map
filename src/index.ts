@@ -98,7 +98,7 @@ const config = [
   {
     zone: "departments",
     message:
-      "Do you want to know what are the secret of our success ? check out presentations ofour departments in this room",
+      "Do you want to know what are the secret of our success ? check out presentations of our departments in this room",
     cta: [
       {
         label: "Dismiss",
