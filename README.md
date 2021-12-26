@@ -8,7 +8,7 @@ where you will get the chance to watch a special live stream of GDG and WTM Algi
 
 |The live stream zone|
  |:------------:|
- ![live](./captures/live2.png)|
+ ![live](captures/live2.PNG)|
 
 ###  The chill zone :
  where you will get to meet other GDG and WTM organizers, have a nice conversation with them and just, chill!
