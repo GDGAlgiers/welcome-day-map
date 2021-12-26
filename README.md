@@ -1,32 +1,69 @@
-# WorkAdventure Map Starter Kit
+# GDG ALGIERS WELCOMEDAY's MAP
 
-This is a starter kit to help you build your own map for [WorkAdventure](https://workadventu.re).
+## What is it ? 
+its a map built with <a href = "https://www.mapeditor.org/"> Tiled </a> fot the virtual meetup of GDG and WTM Algiers annual Welcome Day in this map , You’ll get the chance to visit 6 different rooms 
 
-To understand how to use this starter kit, follow the tutorial at [https://workadventu.re/map-building](https://workadventu.re/map-building).
+### The live stream zone : 
+where you will get the chance to watch a special live stream of GDG and WTM Algiers for this special occasion, brought to you by their organizers
 
-![map](./map.png)
+|The live stream zone|
+ |:------------:|
+ ![live](./captures/live2.png)|
 
-## Installation
+###  The chill zone :
+ where you will get to meet other GDG and WTM organizers, have a nice conversation with them and just, chill!
 
-With npm installed (comes with [node](https://nodejs.org/en/)), run the following commands into a terminal in the root directory of this project:
+|The chill zone|
+ |:------------:|
+ ![chill](./captures/chill.png)|
 
-```shell
-npm install
-npm run start
-```
+### The discord space
+here , you can explore the diffenet actevities in our discord server and join it
 
-The project will run at http://localhost:8080/
+|the discord tpace|
+ |:------------:|
+ ![discord](./captures/discord.png)|
 
-## Licenses
 
-This project contains multiple licenses:
+### Departments’ zone :
+  where you will get to know the different departments of GDG & WTM Algiers! 
 
-* [Code license](./LICENSE.code) *(all files except those for other licenses)*
-* [Map license](./LICENSE.map) *(`map.json` and the map visual as well)*
-* [Assets license](./LICENSE.assets) *(the files inside the `src/assets/` folder)*
 
-### About third party assets
+|Departments’ zone |
+ |:------------:|
+ ![departements](./captures/dep.png)|
 
-If you add third party assets in your map, do not forget to:
-1. Credit the author and license with the "tilesetCopyright" property present in the properties of each tilesets in the `map.json` file
-2. Add the license text in LICENSE.assets
+### Activities’ zone:
+ in which you will be introduced to the various events and projects GDG & WTM Algiers hold" 
+
+|Departments’ zone |
+ |:------------:|
+ ![projetcts](./captures/projects.png)| 
+ 
+### GDG spot : 
+  a modest simulation of our little cozy spot where all the creativity happens, and in which we hope to meet you soon! and this is somme pictures of our members 
+
+|spot 1 |
+ |:------------:|
+ ![spot](./captures/members1.png)| 
+
+ |spot 2 |
+ |:------------:|
+ ![spot](./captures/members2.png)| 
+
+ |spot 3 |
+ |:------------:|
+ ![spot](./captures/members3.png)| 
+ 
+ <br>
+  <br>
+ <br>
+  <br>
+
+
+
+# Scan this qr code and join our community 
+
+ |link tree qr code |
+ |:------------:|
+ ![spot](./captures/linktree.png)| 
