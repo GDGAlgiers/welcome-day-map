@@ -15,7 +15,7 @@ where you will get the chance to watch a special live stream of GDG and WTM Algi
 
 |The chill zone|
  |:------------:|
- ![chill](./captures/chill.png)|
+ ![chill](./captures/chill.PNG)|
 
 ### The discord space
 here , you can explore the diffenet actevities in our discord server and join it
