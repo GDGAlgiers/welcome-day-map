@@ -8,7 +8,7 @@ where you will get the chance to watch a special live stream of GDG and WTM Algi
 
 |The live stream zone|
  |:------------:|
- ![live](./captures/live2.PNG)|
+ ![live](captures/live2.PNG)|
 
 ###  The chill zone :
  where you will get to meet other GDG and WTM organizers, have a nice conversation with them and just, chill!
@@ -22,7 +22,8 @@ here , you can explore the diffenet actevities in our discord server and join it
 
 |the discord tpace|
  |:------------:|
- ![discord](./captures/discord.PNG)|
+ ![discord](./captures/discord.png)|
+
 
 ### Departments’ zone :
   where you will get to know the different departments of GDG & WTM Algiers! 
@@ -30,29 +31,29 @@ here , you can explore the diffenet actevities in our discord server and join it
 
 |Departments’ zone |
  |:------------:|
- ![departements](./captures/dep.PNG)|
+ ![departements](./captures/dep.png)|
 
 ### Activities’ zone:
  in which you will be introduced to the various events and projects GDG & WTM Algiers hold" 
 
 |Departments’ zone |
  |:------------:|
- ![projetcts](./captures/projects.PNG)| 
+ ![projetcts](./captures/projects.png)| 
  
 ### GDG spot : 
   a modest simulation of our little cozy spot where all the creativity happens, and in which we hope to meet you soon! and this is somme pictures of our members 
 
 |spot 1 |
  |:------------:|
- ![spot](./captures/members1.PNG)| 
+ ![spot](./captures/members1.png)| 
 
  |spot 2 |
  |:------------:|
- ![spot](./captures/members2.PNG)| 
+ ![spot](./captures/members2.png)| 
 
  |spot 3 |
  |:------------:|
- ![spot](./captures/members3.PNG)| 
+ ![spot](./captures/members3.png)| 
  
  <br>
   <br>
@@ -65,4 +66,4 @@ here , you can explore the diffenet actevities in our discord server and join it
 
  |link tree qr code |
  |:------------:|
- ![spot](./captures/linktree.PNG)| 
+ ![spot](./captures/linktree.png)| 
