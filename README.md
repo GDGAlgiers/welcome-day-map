@@ -18,7 +18,7 @@ where you will get the chance to watch a special live stream of GDG and WTM Algi
  ![chill](./captures/chill.PNG)|
 
 ### The discord space
-here , you can explore the diffenet actevities in our discord server and join it
+here , you can explore the different actevities in our discord server and join it
 
 |the discord tpace|
  |:------------:|
@@ -40,7 +40,7 @@ here , you can explore the diffenet actevities in our discord server and join it
  ![projetcts](./captures/projects.PNG)| 
  
 ### GDG spot : 
-  a modest simulation of our little cozy spot where all the creativity happens, and in which we hope to meet you soon! and this is somme pictures of our members 
+  a modest simulation of our little cozy spot where all the creativity happens, and in which we hope to meet you soon! and this is some pictures of our members 
 
 |spot 1 |
  |:------------:|
