@@ -86,7 +86,7 @@ const config = [
   {
     zone: "eventsprojects",
     message:
-      "At GDG & WTM Algiers we provide high quality events and projects, explore them inside this room",
+      "At GDG & WTM Algiers, we provide high quality events and projects, explore them inside this room",
     cta: [
       {
         label: "Dismiss",
@@ -98,7 +98,7 @@ const config = [
   {
     zone: "departments",
     message:
-      "Do you want to know what are the secret of our success ? check out presentations of our departments in this room",
+      "Do you want to know what are the secret of our success? Check out presentations of our departments in this room",
     cta: [
       {
         label: "Dismiss",
@@ -110,7 +110,7 @@ const config = [
   {
     zone: "discordspace",
     message:
-      "GDG Algiers has a discord community space with +2k member, we do awesome things there check them out here",
+      "GDG Algiers has a discord community space with +2k member, we do awesome things there, check them out here",
     cta: [
       {
         label: "Dismiss",
@@ -122,7 +122,7 @@ const config = [
   {
     zone: "chill",
     message:
-      "Tired of exploring the space ? you can sit in this room to have a rest and chill",
+      "Tired of exploring the space? You can sit in this room to have a rest and chill",
     cta: [
       {
         label: "Dismiss",
@@ -134,7 +134,7 @@ const config = [
   {
     zone: "games",
     message:
-      "Wanna play some games with friends this is the perfect room for that, uno,skribble and gartic games are presents",
+      "Wanna play some games with friends, this is the perfect room for that, uno, skribble and gartic games are presents",
     cta: [
       {
         label: "Dismiss",
